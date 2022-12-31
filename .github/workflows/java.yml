@@ -25,6 +25,7 @@ jobs:
           - 17j9
           - 18
           - 18j9
+          - 19
 
     steps:
       - name: Checkout
@@ -55,4 +56,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/no767/yolks-test:java_${{ matrix.tag }}
+            ghcr.io/no767/pt-yolks:java_${{ matrix.tag }}
