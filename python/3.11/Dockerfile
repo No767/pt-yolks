@@ -28,7 +28,7 @@ LABEL       org.opencontainers.image.source="https://github.com/pterodactyl/yolk
 LABEL       org.opencontainers.image.licenses=MIT
 
 RUN         apt update \
-            && apt install -y --no-install-recommends bash build-essetial ca-certificates curl ffmpeg git libnacl-dev tar tzdata \
+            && apt install -y --no-install-recommends bash build-essential ca-certificates curl ffmpeg git libnacl-dev tar tzdata \
             && adduser -D -h /home/container container
 
 USER        container
