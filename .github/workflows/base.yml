@@ -1,4 +1,4 @@
-name: Build OSes
+name: Build OS
 on:
   workflow_dispatch:
   schedule:

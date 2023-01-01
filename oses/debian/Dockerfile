@@ -1,4 +1,4 @@
-FROM        --platform=$TARGETOS/$TARGETARCH debian:bullseye-slim
+FROM        --platform=$TARGETOS/$TARGETARCH debian:buster-slim
 
 LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
