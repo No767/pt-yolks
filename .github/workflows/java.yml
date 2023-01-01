@@ -1,4 +1,4 @@
-name: build java
+name: Build Java
 on:
   workflow_dispatch:
   schedule:
@@ -10,7 +10,7 @@ on:
       - java/**
 jobs:
   push:
-    name: "yolks:java_${{ matrix.tag }}"
+    name: "Java ${{ matrix.tag }}"
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false

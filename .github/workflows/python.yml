@@ -1,4 +1,4 @@
-name: build python
+name: Build Python
 on:
   workflow_dispatch:
   schedule:
@@ -10,7 +10,7 @@ on:
       - python/**
 jobs:
   push:
-    name: "yolks:python_${{ matrix.tag }}"
+    name: "Python ${{ matrix.tag }}"
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
