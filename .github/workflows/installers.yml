@@ -11,7 +11,7 @@ on:
 jobs:
   push:
     name: "installers:{{ matrix.tag }}"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
@@ -37,4 +37,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/pterodactyl/installers:${{ matrix.tag }}
+            ghcr.io/no767/pt-yolks:installer-${{ matrix.tag }}

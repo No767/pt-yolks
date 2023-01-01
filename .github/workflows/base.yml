@@ -1,4 +1,4 @@
-name: build oses
+name: Build OSes
 on:
   workflow_dispatch:
   schedule:
@@ -10,31 +10,42 @@ on:
       - oses/**
 jobs:
   push:
-    name: "yolks:${{ matrix.oses }}"
-    runs-on: ubuntu-latest
+    name: "${{ matrix.oses }}"
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
         oses:
           - alpine
           - debian
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: docker/setup-qemu-action@v1
-      - uses: docker/setup-buildx-action@v1
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Setup Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v2
         with:
-          version: "v0.5.1"
+          version: latest
           buildkitd-flags: --debug
-      - uses: docker/login-action@v1
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.REGISTRY_TOKEN }}
-      - uses: docker/build-push-action@v2
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Build and push
+        uses: docker/build-push-action@v3.2.0
         with:
           context: ./oses/${{ matrix.oses }}
           file: ./oses/${{ matrix.oses }}/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/pterodactyl/yolks:${{ matrix.oses }}
+            ghcr.io/no767/pt-yolks:${{ matrix.oses }}
