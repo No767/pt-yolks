@@ -3,7 +3,7 @@ FROM ghcr.io/graalvm/graalvm-ce:ol9-java17
 LABEL       author="Noelle Wang" maintainer="Noelle Wang"
 
 RUN         microdnf update -y \
-            && mircodnf install -y lsof curl ca-certificates openssl git tar fontconfig tzdata iproute \
+            && mircodnf install -y iproute \
             && useradd -d /home/container -m container
 
 USER        container
