@@ -2,8 +2,7 @@ FROM ghcr.io/graalvm/graalvm-ce:ol9-java17
 
 LABEL       author="Noelle Wang" maintainer="Noelle Wang"
 
-RUN         microdnf update -y \
-            && mircodnf install -y iproute \
+RUN         microdnf install -y iproute \
             && useradd -d /home/container -m container
 
 USER        container
