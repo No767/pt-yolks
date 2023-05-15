@@ -20,7 +20,7 @@
 # SOFTWARE.
 #
 
-FROM        --platform=$TARGETOS/$TARGETARCH node:14-bullseye-slim
+FROM        --platform=$TARGETOS/$TARGETARCH golang:1.20-bullseye
 
 LABEL       author="Matthew Penner" maintainer="matthew@pterodactyl.io"
 
@@ -28,7 +28,7 @@ LABEL       org.opencontainers.image.source="https://github.com/pterodactyl/yolk
 LABEL       org.opencontainers.image.licenses=MIT
 
 RUN         apt update \
-            && apt install -y --no-install-recommends bash ca-certificates curl ffmpeg git openssl sqlite3 tar tzdata \
+            && apt install -y --no-install-recommends bash ca-certificates tzdata \
             && adduser -D -h /home/container container
 
 USER        container
@@ -37,3 +37,4 @@ WORKDIR     /home/container
 
 COPY        ./../entrypoint.sh /entrypoint.sh
 CMD         [ "/bin/bash", "/entrypoint.sh" ]
+
