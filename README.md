@@ -4,7 +4,7 @@ A curated collection of core images that can be used with Pterodactyl's Egg syst
 periodically (every month) to ensure dependencies are always up-to-date. This is a fork of the official yolks repo, but 
 with major upgrades and different bases. 
 
-Go, Node.js, and Python images use Debian 11 as the base, and uses bash instead of ash. Java 8, 11, and 16 images are based on Ubuntu 20.04 ("Focal"), while Java 17, 18, and 19 images are based on Ubuntu 22.04 ("Jammy"). All Java OpenJ9 images are based on Ubuntu 22.04.
+Go, Node.js, and Python images use Debian 11 as the base, and uses `bash` instead of `ash`. Java 8 and 11 images are based on Ubuntu 20.04 ("Focal"), while Java 17, and 20 images are based on Ubuntu 22.04 ("Jammy"). All Java OpenJ9 images are based on Ubuntu 22.04, and all Java GraalVM images are based on Oracle Linux 9.
 
 Images are hosted on `ghcr.io` and exist under the `games`, `installers`, and `yolks` spaces. The following logic
 is used when determining which space an image will live under:
@@ -42,45 +42,35 @@ is tagged correctly.
   * [`source`](https://github.com/pterodactyl/yolks/tree/master/games/source)
     * `ghcr.io/pterodactyl/games:source`
 * [`golang`](https://github.com/No767/pt-yolks/tree/master/go)
-  * [`go1.17`](https://github.com/No767/pt-yolks/tree/master/go/1.17)
-    * `ghcr.io/no767/pt-yolks:go_1.17`
-  * [`go1.18`](https://github.com/No767/pt-yolks/tree/master/go/1.18)
-    * `ghcr.io/no767/pt-yolks:go_1.18`
   * [`go1.19`](https://github.com/No767/pt-yolks/tree/master/go/1.19)
     * `ghcr.io/no767/pt-yolks:go_1.19`
+  * [`go1.20`](https://github.com/No767/pt-yolks/tree/master/go/1.20)
+    * `ghcr.io/no767/pt-yolks:go_1.20`
 * [`java`](https://github.com/No767/pt-yolks/tree/master/java)
   * [`java8`](https://github.com/No767/pt-yolks/tree/master/java/8)
     * `ghcr.io/no767/pt-yolks:java_8`
   * [`java8 - OpenJ9`](https://github.com/No767/pt-yolks/tree/master/java/8j9)
     * `ghcr.io/no767/pt-yolks:java_8j9`
+  * [`java8 - GraalVM`](https://github.com/No767/pt-yolks/tree/master/java/8graalvm)
+    * `ghcr.io/no767/pt-yolks:java_8graalvm`
   * [`java11`](https://github.com/No767/pt-yolks/tree/master/java/11)
     * `ghcr.io/no767/pt-yolks:java_11`
   * [`java11 - OpenJ9`](https://github.com/No767/pt-yolks/tree/master/java/11j9)
     * `ghcr.io/no767/pt-yolks:java_11j9`
-  * [`java16`](https://github.com/No767/pt-yolks/tree/master/java/16)
-    * `ghcr.io/no767/pt-yolks:java_16`
-  * [`java16 - OpenJ9`](https://github.com/No767/pt-yolks/tree/master/java/16j9)
-    * `ghcr.io/no767/pt-yolks:java_16j9`
+  * [`java11 - GraalVM`](https://github.com/No767/pt-yolks/tree/master/java/11graalvm)
+    * `ghcr.io/no767/pt-yolks:java_11graalvm`
   * [`java17`](https://github.com/No767/pt-yolks/tree/master/java/17)
     * `ghcr.io/no767/pt-yolks:java_17`
   * [`java17 - OpenJ9`](https://github.com/No767/pt-yolks/tree/master/java/17j9)
     * `ghcr.io/no767/pt-yolks:java_17j9`
-  * [`java18`](https://github.com/No767/pt-yolks/tree/master/java/18)
-    * `ghcr.io/no767/pt-yolks:java_18`
-  * [`java18 - OpenJ9`](https://github.com/No767/pt-yolks/tree/master/java/18j9)
-    * `ghcr.io/no767/pt-yolks:java_18j9`
-  * [`java19`](https://github.com/No767/pt-yolks/tree/master/java/19)
-    * `ghcr.io/no767/pt-yolks:java_19`
+  * [`java17 - GraalVM`](https://github.com/No767/pt-yolks/tree/master/java/17graalvm)
+    * `ghcr.io/no767/pt-yolks:java_17graalvm`
 * [`nodejs`](https://github.com/No767/pt-yolks/tree/master/nodejs)
-  * [`node14`](https://github.com/No767/pt-yolks/tree/master/nodejs/14)
-    * `ghcr.io/no767/pt-yolks:nodejs_14`
-  * [`node16`](https://github.com/No767/pt-yolks/tree/master/nodejs/16)
-    * `ghcr.io/no767/pt-yolks:nodejs_16`
   * [`node18`](https://github.com/No767/pt-yolks/tree/master/nodejs/18)
     * `ghcr.io/no767/pt-yolks:nodejs_18`
+  * [`node20`](https://github.com/No767/pt-yolks/tree/master/nodejs/20)
+    * `ghcr.io/no767/pt-yolks:nodejs_20`
 * [`python`](https://github.com/No767/pt-yolks/tree/master/python)
-  * [`python3.7`](https://github.com/No767/pt-yolks/tree/master/python/3.7)
-    * `ghcr.io/no767/pt-yolks:python_3.7`
   * [`python3.8`](https://github.com/No767/pt-yolks/tree/master/python/3.8)
     * `ghcr.io/no767/pt-yolks:python_3.8`
   * [`python3.9`](https://github.com/No767/pt-yolks/tree/master/python/3.9)
